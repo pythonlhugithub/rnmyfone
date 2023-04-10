@@ -3,6 +3,7 @@ import {Text, View, StyleSheet, Button, Alert, Image, ActivityIndicator, SafeAre
 import imy from './assets/aio1.jpg';
 import  AsyncStorage from '@react-native-async-storage/async-storage'
 import Loader from './Loader' 
+import Auth from './Auth'
 export default class SplashScreen extends React.Component {
   constructor(navigation) {
     super();
@@ -51,9 +52,14 @@ export default class SplashScreen extends React.Component {
          
 
           {(!this.state.animating?(  // this is the user id exist landing page
-             <View style={styles.welcome}>
+            <>
+            <View style={styles.welcome}>
                  <Text>this is the existing user id landing page</Text>
+            
+             <Auth /> 
              </View> 
+             </>
+
           ):null)}
            
          </SafeAreaView>
@@ -83,6 +89,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    height:200
+
   },
 
   ActivityIndicator: {height: 80, backgroundcolor: 'red'}
